@@ -99,9 +99,23 @@
                 <button class="hidden md:flex items-center justify-center rounded-lg h-10 px-6 bg-primary hover:bg-[#a37609] transition-colors text-white text-sm font-bold tracking-[0.015em]">
                     <span class="truncate">Get a Quote</span>
                 </button>
-                <button class="lg:hidden text-white">
-                    <span class="material-symbols-outlined">menu</span>
+                <button id="menu-btn" class="lg:hidden text-white">
+                    <span id="menu-icon" class="material-symbols-outlined">menu</span>
                 </button>
+            </div>
+            <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-background-dark/95 backdrop-blur-md border-b border-border-dark z-50">
+                <nav class="flex flex-col items-center gap-3 py-4">
+                    <a class="text-white/80 hover:text-primary transition-all text-sm font-bold uppercase tracking-widest"
+                        href="./index.html">Home</a>
+                    <a class="text-white/80 hover:text-primary transition-all text-sm font-bold uppercase tracking-widest"
+                        href="./aboutUs.html">About Us</a>
+                    <a class="text-white/80 hover:text-primary transition-all text-sm font-bold uppercase tracking-widest"
+                        href="./brand.html">Brands</a>
+                    <a class="text-white/80 hover:text-primary transition-all text-sm font-bold uppercase tracking-widest"
+                        href="./products.html">Products</a>
+                    <a class="text-white/80 hover:text-primary transition-all text-sm font-bold uppercase tracking-widest"
+                        href="./contact.html">Contact Us</a>
+                </nav>
             </div>
 
         </div>
@@ -704,5 +718,20 @@
     applySizeBtn.addEventListener('click', filterProducts);
     checkboxes.forEach(cb => cb.addEventListener('change', filterProducts));
 });
+</script>
+<script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.textContent = 'menu';
+        } else {
+            menuIcon.textContent = 'close';
+        }
+    });
 </script>
 </html>
