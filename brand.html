@@ -91,9 +91,23 @@
                 <button class="hidden md:flex items-center justify-center rounded-lg h-10 px-6 bg-primary hover:bg-[#a37609] transition-colors text-white text-sm font-bold tracking-[0.015em]">
                     <span class="truncate">Get a Quote</span>
                 </button>
-                <button class="lg:hidden text-white">
-                    <span class="material-symbols-outlined">menu</span>
+                <button id="menu-btn" class="lg:hidden text-white">
+                    <span id="menu-icon" class="material-symbols-outlined">menu</span>
                 </button>
+            </div>
+            <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-background-dark/95 backdrop-blur-md border-b border-border-dark z-50">
+                <nav class="flex flex-col items-center gap-3 py-4">
+                    <a class="text-white/80 hover:text-primary transition-all text-sm font-bold uppercase tracking-widest"
+                        href="./index.html">Home</a>
+                    <a class="text-white/80 hover:text-primary transition-all text-sm font-bold uppercase tracking-widest"
+                        href="./aboutUs.html">About Us</a>
+                    <a class="text-white/80 hover:text-primary transition-all text-sm font-bold uppercase tracking-widest"
+                        href="./brand.html">Brands</a>
+                    <a class="text-white/80 hover:text-primary transition-all text-sm font-bold uppercase tracking-widest"
+                        href="./products.html">Products</a>
+                    <a class="text-white/80 hover:text-primary transition-all text-sm font-bold uppercase tracking-widest"
+                        href="./contact.html">Contact Us</a>
+                </nav>
             </div>
 
         </div>
@@ -371,7 +385,7 @@
         </section>
         <section class="py-20 px-4 bg-primary relative overflow-hidden">
             <div class="absolute inset-0 opacity-10"
-                style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+                style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM36 4V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
             </div>
             <div class="layout-container flex justify-center relative z-10">
                 <div class="flex flex-col md:flex-row items-center justify-between max-w-[1000px] w-full gap-8">
@@ -484,5 +498,20 @@
     </div>
 
 </body>
+<script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.textContent = 'menu';
+        } else {
+            menuIcon.textContent = 'close';
+        }
+    });
+</script>
 
 </html>
