@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Products - Tire Co.</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#bc8a0b",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#181611",
+                        "surface-dark": "#221d10",
+                        "border-dark": "#393428",
+                        "text-muted": "#bab19c"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Space Grotesk", "Noto Sans", sans-serif;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #181611;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #393428;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #bc8a0b;
+        }
+
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white overflow-x-hidden flex flex-col min-h-screen">
+    <header class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-md border-b border-border-dark">
+    <div class="layout-container flex justify-center w-full">
+        <div class="flex items-center justify-between w-full max-w-[1200px] px-6 py-4">
+            
+            <div class="flex items-center gap-2 md:gap-3 text-white flex-shrink-0">
+                <img src="./chat logo.png" alt="Bin Sawad Logo" 
+                     class="h-8 md:h-10 w-auto object-contain transition-transform hover:scale-105" />
+                <h2 class="text-white text-base md:text-lg font-bold leading-tight tracking-tight font-display">
+                    BIN SAWAD <span class="text-primary italic">TRADING COMPANY</span>
+                </h2>
+            </div>
+
+            <nav class="hidden lg:flex items-center gap-5">
+                <a class="text-white/80 hover:text-primary transition-all text-xs font-bold uppercase tracking-widest"
+                    href="./main.html">Home</a>
+                <a class="text-white/80 hover:text-primary transition-all text-xs font-bold uppercase tracking-widest"
+                    href="./aboutUs.html">About Us</a>
+                <a class="text-white/80 hover:text-primary transition-all text-xs font-bold uppercase tracking-widest"
+                    href="./brand.html">Brands</a>
+                <a class="text-white/80 hover:text-primary transition-all text-xs font-bold uppercase tracking-widest"
+                    href="./products.html">Products</a>
+                <a class="text-white/80 hover:text-primary transition-all text-xs font-bold uppercase tracking-widest"
+                    href="./contact.html">Contact Us</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button class="hidden md:flex items-center justify-center rounded-lg h-10 px-6 bg-primary hover:bg-[#a37609] transition-colors text-white text-sm font-bold tracking-[0.015em]">
+                    <span class="truncate">Get a Quote</span>
+                </button>
+                <button class="lg:hidden text-white">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</header>
+    <section class="bg-surface-dark border-b border-border-dark py-12 px-6">
+        <div class="max-w-[1200px] mx-auto w-full">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <div class="flex items-center gap-2 text-text-muted text-sm mb-2">
+                        <a class="hover:text-primary" href="#">Home</a>
+                        <span class="material-symbols-outlined text-xs">chevron_right</span>
+                        <span class="text-white">Products</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-black font-display text-white uppercase tracking-tight">
+                        Tire <span class="text-primary">Catalog</span>
+                    </h1>
+                </div>
+                <p class="text-text-muted max-w-md text-sm md:text-right">
+                    Browse our extensive selection of premium tires. Use the filters to find the perfect match for your
+                    vehicle and driving style.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="flex-1 py-12 px-4 md:px-6">
+        <div class="max-w-[1200px] mx-auto w-full">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <aside class="w-full lg:w-[280px] flex-shrink-0 space-y-6">
+                    <div class="relative">
+                        <input
+                            class="w-full bg-surface-dark border border-border-dark rounded-lg py-3 pl-10 pr-4 text-white placeholder-text-muted focus:ring-1 focus:ring-primary focus:border-primary transition-all"
+                            placeholder="Search by model or keyword..." type="text" />
+                        <span class="material-symbols-outlined absolute left-3 top-3.5 text-text-muted">search</span>
+                    </div>
+                    <div class="bg-surface-dark border border-border-dark rounded-xl p-5">
+                        <div
+                            class="flex items-center gap-2 mb-4 text-white font-bold font-display uppercase tracking-wide text-sm border-b border-border-dark pb-2">
+                            <span class="material-symbols-outlined text-primary text-lg">aspect_ratio</span>
+                            Filter by Size
+                        </div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div class="col-span-3 mb-1">
+                                <label class="text-xs text-text-muted block mb-1">Width</label>
+                                <select
+                                    class="w-full bg-background-dark border-border-dark rounded text-white text-sm py-2 focus:ring-primary focus:border-primary">
+                                    <option>205</option>
+                                    <option>215</option>
+                                    <option>225</option>
+                                    <option>245</option>
+                                </select>
+                            </div>
+                            <div class="col-span-3 mb-1">
+                                <label class="text-xs text-text-muted block mb-1">Ratio</label>
+                                <select
+                                    class="w-full bg-background-dark border-border-dark rounded text-white text-sm py-2 focus:ring-primary focus:border-primary">
+                                    <option>45</option>
+                                    <option>50</option>
+                                    <option>55</option>
+                                    <option>65</option>
+                                </select>
+                            </div>
+                            <div class="col-span-3">
+                                <label class="text-xs text-text-muted block mb-1">Diameter</label>
+                                <select
+                                    class="w-full bg-background-dark border-border-dark rounded text-white text-sm py-2 focus:ring-primary focus:border-primary">
+                                    <option>R16</option>
+                                    <option>R17</option>
+                                    <option>R18</option>
+                                    <option>R19</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full mt-4 bg-primary hover:bg-[#a37609] text-white text-sm font-bold py-2 rounded transition-colors">Apply
+                            Size</button>
+                    </div>
+                    <details class="group bg-surface-dark border border-border-dark rounded-xl overflow-hidden" open="">
+                        <summary
+                            class="flex items-center justify-between p-5 cursor-pointer hover:bg-white/5 transition-colors select-none">
+                            <span class="text-white font-bold font-display uppercase tracking-wide text-sm">Tire
+                                Type</span>
+                            <span
+                                class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+                        </summary>
+                        <div class="px-5 pb-5 space-y-3 pt-0">
+                            <label class="flex items-center gap-3 cursor-pointer group/item">
+                                <input
+                                    class="rounded bg-background-dark border-border-dark text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    type="checkbox" />
+                                <span class="text-text-muted text-sm group-hover/item:text-white transition-colors">All
+                                    Season (42)</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group/item">
+                                <input
+                                    class="rounded bg-background-dark border-border-dark text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    type="checkbox" />
+                                <span
+                                    class="text-text-muted text-sm group-hover/item:text-white transition-colors">Performance
+                                    (28)</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group/item">
+                                <input
+                                    class="rounded bg-background-dark border-border-dark text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    type="checkbox" />
+                                <span
+                                    class="text-text-muted text-sm group-hover/item:text-white transition-colors">Winter
+                                    / Snow (15)</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group/item">
+                                <input
+                                    class="rounded bg-background-dark border-border-dark text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    type="checkbox" />
+                                <span
+                                    class="text-text-muted text-sm group-hover/item:text-white transition-colors">Off-Road
+                                    / A/T (31)</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group/item">
+                                <input
+                                    class="rounded bg-background-dark border-border-dark text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    type="checkbox" />
+                                <span
+                                    class="text-text-muted text-sm group-hover/item:text-white transition-colors">Touring
+                                    (19)</span>
+                            </label>
+                        </div>
+                    </details>
+                    <details class="group bg-surface-dark border border-border-dark rounded-xl overflow-hidden" open="">
+                        <summary
+                            class="flex items-center justify-between p-5 cursor-pointer hover:bg-white/5 transition-colors select-none">
+                            <span class="text-white font-bold font-display uppercase tracking-wide text-sm">Brand</span>
+                            <span
+                                class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+                        </summary>
+                        <div class="px-5 pb-5 space-y-3 pt-0">
+                            <label class="flex items-center gap-3 cursor-pointer group/item">
+                                <input checked=""
+                                    class="rounded bg-background-dark border-border-dark text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    type="checkbox" />
+                                <span
+                                    class="text-text-muted text-sm group-hover/item:text-white transition-colors">Michelin</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group/item">
+                                <input
+                                    class="rounded bg-background-dark border-border-dark text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    type="checkbox" />
+                                <span
+                                    class="text-text-muted text-sm group-hover/item:text-white transition-colors">Pirelli</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group/item">
+                                <input
+                                    class="rounded bg-background-dark border-border-dark text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    type="checkbox" />
+                                <span
+                                    class="text-text-muted text-sm group-hover/item:text-white transition-colors">Goodyear</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group/item">
+                                <input
+                                    class="rounded bg-background-dark border-border-dark text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    type="checkbox" />
+                                <span
+                                    class="text-text-muted text-sm group-hover/item:text-white transition-colors">Bridgestone</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group/item">
+                                <input
+                                    class="rounded bg-background-dark border-border-dark text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    type="checkbox" />
+                                <span
+                                    class="text-text-muted text-sm group-hover/item:text-white transition-colors">Continental</span>
+                            </label>
+                        </div>
+                    </details>
+                </aside>
+                <div class="flex-1">
+                    <div
+                        class="bg-surface-dark border border-border-dark rounded-xl p-4 mb-6 flex flex-wrap gap-4 items-center justify-between">
+                        <p class="text-text-muted text-sm font-medium"><span class="text-white font-bold">128</span>
+                            Products Found</p>
+                        <div class="flex items-center gap-3">
+                            <label class="text-text-muted text-sm hidden sm:block">Sort By:</label>
+                            <div class="relative">
+                                <select
+                                    class="bg-background-dark border border-border-dark text-white text-sm rounded-lg focus:ring-primary focus:border-primary py-2 pl-3 pr-8 appearance-none cursor-pointer min-w-[160px]">
+                                    <option>Most Popular</option>
+                                    <option>Price: Low to High</option>
+                                    <option>Price: High to Low</option>
+                                    <option>Top Rated</option>
+                                    <option>New Arrivals</option>
+                                </select>
+                                <span
+                                    class="material-symbols-outlined absolute right-2 top-2 pointer-events-none text-text-muted text-lg">arrow_drop_down</span>
+                            </div>
+                            <div class="flex border border-border-dark rounded-lg overflow-hidden ml-2">
+                                <button class="p-2 bg-primary text-white">
+                                    <span class="material-symbols-outlined text-lg">grid_view</span>
+                                </button>
+                                <button
+                                    class="p-2 bg-background-dark text-text-muted hover:text-white hover:bg-white/5 transition-colors">
+                                    <span class="material-symbols-outlined text-lg">view_list</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-dark border border-border-dark text-xs text-text-muted">
+                            Brand: Michelin
+                            <button class="hover:text-white"><span
+                                    class="material-symbols-outlined text-sm">close</span></button>
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-dark border border-border-dark text-xs text-text-muted">
+                            Type: Performance
+                            <button class="hover:text-white"><span
+                                    class="material-symbols-outlined text-sm">close</span></button>
+                        </span>
+                        <button class="text-primary text-xs font-bold hover:underline ml-2">Clear All</button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                        <div
+                            class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-black/50">
+                            <div
+                                class="p-6 flex items-center justify-center bg-[#1a1814] relative h-64 overflow-hidden">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider z-10">Best
+                                    Seller</span>
+                                <button
+                                    class="absolute top-3 right-3 text-text-muted hover:text-primary transition-colors z-10">
+                                    <span class="material-symbols-outlined">favorite</span>
+                                </button>
+                                <img class="w-48 h-48 object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+                                    data-alt="Michelin Pilot Sport 4S tire"
+                                    src="./tire1.jpeg" />
+                            </div>
+                            <div class="p-5 flex flex-col flex-1 border-t border-border-dark">
+                                <div class="flex justify-between items-start mb-1">
+                                    <span
+                                        class="text-text-muted text-[10px] font-bold uppercase tracking-wider">TBS TIRES</span>
+                                    <span
+                                        class="text-primary text-[10px] font-bold uppercase bg-primary/10 px-2 py-0.5 rounded">Summer</span>
+                                </div>
+                                <h3
+                                    class="text-white text-lg font-bold mb-2 font-display leading-tight group-hover:text-primary transition-colors">
+                                    Pilot Sport 4S</h3>
+                                <div class="flex items-center gap-1 mb-3">
+                                    <div class="flex text-primary text-sm">
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                    </div>
+                                    <span class="text-text-muted text-xs">(128)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-black/50">
+                            <div
+                                class="p-6 flex items-center justify-center bg-[#1a1814] relative h-64 overflow-hidden">
+                                <button
+                                    class="absolute top-3 right-3 text-text-muted hover:text-primary transition-colors z-10">
+                                    <span class="material-symbols-outlined">favorite</span>
+                                </button>
+                                <img class="w-48 h-48 object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
+                                    data-alt="Pirelli P Zero tire"
+                                    src="tire2.jpeg" />
+                            </div>
+                            <div class="p-5 flex flex-col flex-1 border-t border-border-dark">
+                                <div class="flex justify-between items-start mb-1">
+                                    <span
+                                        class="text-text-muted text-[10px] font-bold uppercase tracking-wider">Pirelli</span>
+                                    <span
+                                        class="text-primary text-[10px] font-bold uppercase bg-primary/10 px-2 py-0.5 rounded">All
+                                        Season</span>
+                                </div>
+                                <h3
+                                    class="text-white text-lg font-bold mb-2 font-display leading-tight group-hover:text-primary transition-colors">
+                                    P Zero All Season Plus</h3>
+                                <div class="flex items-center gap-1 mb-3">
+                                    <div class="flex text-primary text-sm">
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px] text-border-dark">star</span>
+                                    </div>
+                                    <span class="text-text-muted text-xs">(84)</span>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-black/50">
+                            <div
+                                class="p-6 flex items-center justify-center bg-[#1a1814] relative h-64 overflow-hidden">
+                                <span
+                                    class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider z-10">Sale</span>
+                                <button
+                                    class="absolute top-3 right-3 text-text-muted hover:text-primary transition-colors z-10">
+                                    <span class="material-symbols-outlined">favorite</span>
+                                </button>
+                                <img class="w-48 h-48 object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+                                    data-alt="Goodyear Wrangler tire"
+                                    src="tire3.jpeg" />
+                            </div>
+                            <div class="p-5 flex flex-col flex-1 border-t border-border-dark">
+                                <div class="flex justify-between items-start mb-1">
+                                    <span
+                                        class="text-text-muted text-[10px] font-bold uppercase tracking-wider">Goodyear</span>
+                                    <span
+                                        class="text-primary text-[10px] font-bold uppercase bg-primary/10 px-2 py-0.5 rounded">All-Terrain</span>
+                                </div>
+                                <h3
+                                    class="text-white text-lg font-bold mb-2 font-display leading-tight group-hover:text-primary transition-colors">
+                                    Wrangler Duratrac</h3>
+                                <div class="flex items-center gap-1 mb-3">
+                                    <div class="flex text-primary text-sm">
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star_half</span>
+                                    </div>
+                                    <span class="text-text-muted text-xs">(310)</span>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-black/50">
+                            <div
+                                class="p-6 flex items-center justify-center bg-[#1a1814] relative h-64 overflow-hidden">
+                                <button
+                                    class="absolute top-3 right-3 text-text-muted hover:text-primary transition-colors z-10">
+                                    <span class="material-symbols-outlined">favorite</span>
+                                </button>
+                                <img class="w-48 h-48 object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+                                    data-alt="Generic tire tread"
+                                    src="./tire4.jpeg" />
+                            </div>
+                            <div class="p-5 flex flex-col flex-1 border-t border-border-dark">
+                                <div class="flex justify-between items-start mb-1">
+                                    <span
+                                        class="text-text-muted text-[10px] font-bold uppercase tracking-wider">Continental</span>
+                                    <span
+                                        class="text-primary text-[10px] font-bold uppercase bg-primary/10 px-2 py-0.5 rounded">Touring</span>
+                                </div>
+                                <h3
+                                    class="text-white text-lg font-bold mb-2 font-display leading-tight group-hover:text-primary transition-colors">
+                                    ExtremeContact DWS06</h3>
+                                <div class="flex items-center gap-1 mb-3">
+                                    <div class="flex text-primary text-sm">
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span
+                                            class="material-symbols-outlined text-[16px] text-border-dark">star_outline</span>
+                                    </div>
+                                    <span class="text-text-muted text-xs">(45)</span>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-black/50">
+                            <div
+                                class="p-6 flex items-center justify-center bg-[#1a1814] relative h-64 overflow-hidden">
+                                <button
+                                    class="absolute top-3 right-3 text-text-muted hover:text-primary transition-colors z-10">
+                                    <span class="material-symbols-outlined">favorite</span>
+                                </button>
+                                <img class="w-48 h-48 object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
+                                    data-alt="Bridgestone tire"
+                                    src="./tire5.jpeg" />
+                            </div>
+                            <div class="p-5 flex flex-col flex-1 border-t border-border-dark">
+                                <div class="flex justify-between items-start mb-1">
+                                    <span
+                                        class="text-text-muted text-[10px] font-bold uppercase tracking-wider">Bridgestone</span>
+                                    <span
+                                        class="text-primary text-[10px] font-bold uppercase bg-primary/10 px-2 py-0.5 rounded">Performance</span>
+                                </div>
+                                <h3
+                                    class="text-white text-lg font-bold mb-2 font-display leading-tight group-hover:text-primary transition-colors">
+                                    Potenza RE980AS+</h3>
+                                <div class="flex items-center gap-1 mb-3">
+                                    <div class="flex text-primary text-sm">
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                    </div>
+                                    <span class="text-text-muted text-xs">(210)</span>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-black/50">
+                            <div
+                                class="p-6 flex items-center justify-center bg-[#1a1814] relative h-64 overflow-hidden">
+                                <button
+                                    class="absolute top-3 right-3 text-text-muted hover:text-primary transition-colors z-10">
+                                    <span class="material-symbols-outlined">favorite</span>
+                                </button>
+                                <img class="w-48 h-48 object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+                                    data-alt="Michelin Defender tire"
+                                    src="./tire6.jpeg" />
+                            </div>
+                            <div class="p-5 flex flex-col flex-1 border-t border-border-dark">
+                                <div class="flex justify-between items-start mb-1">
+                                    <span
+                                        class="text-text-muted text-[10px] font-bold uppercase tracking-wider">Michelin</span>
+                                    <span
+                                        class="text-primary text-[10px] font-bold uppercase bg-primary/10 px-2 py-0.5 rounded">All
+                                        Season</span>
+                                </div>
+                                <h3
+                                    class="text-white text-lg font-bold mb-2 font-display leading-tight group-hover:text-primary transition-colors">
+                                    Defender T+H</h3>
+                                <div class="flex items-center gap-1 mb-3">
+                                    <div class="flex text-primary text-sm">
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star</span>
+                                        <span class="material-symbols-outlined text-[16px]">star_half</span>
+                                    </div>
+                                    <span class="text-text-muted text-xs">(355)</span>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="mt-12 flex justify-center">
+                        <nav class="flex items-center gap-2">
+                            <button
+                                class="size-10 flex items-center justify-center rounded-lg border border-border-dark text-text-muted hover:border-primary hover:text-white transition-colors disabled:opacity-50"
+                                disabled="">
+                                <span class="material-symbols-outlined">chevron_left</span>
+                            </button>
+                            <button
+                                class="size-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+                            <button
+                                class="size-10 flex items-center justify-center rounded-lg border border-border-dark text-text-muted hover:border-primary hover:text-white transition-colors">2</button>
+                            <button
+                                class="size-10 flex items-center justify-center rounded-lg border border-border-dark text-text-muted hover:border-primary hover:text-white transition-colors">3</button>
+                            <span class="text-text-muted px-2">...</span>
+                            <button
+                                class="size-10 flex items-center justify-center rounded-lg border border-border-dark text-text-muted hover:border-primary hover:text-white transition-colors">8</button>
+                            <button
+                                class="size-10 flex items-center justify-center rounded-lg border border-border-dark text-text-muted hover:border-primary hover:text-white transition-colors">
+                                <span class="material-symbols-outlined">chevron_right</span>
+                            </button>
+                        </nav>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-background-dark border-t border-border-dark pt-16 pb-8 px-4 mt-auto">
+        <div class="layout-container flex justify-center">
+            <div class="max-w-[1200px] w-full">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                    <div class="col-span-1 md:col-span-1">
+                        <div class="flex items-center gap-2 text-white mb-6">
+                            <span class="material-symbols-outlined text-primary text-3xl">tire_repair</span>
+                            <span class="text-xl font-bold font-display">Tire Co.</span>
+                        </div>
+                        <p class="text-text-muted text-sm leading-relaxed mb-6">
+                            The trusted choice for premium tires and automotive service. We keep you rolling safely.
+                        </p>
+                        <div class="flex gap-4">
+                            <a class="size-10 rounded-full bg-surface-dark border border-border-dark flex items-center justify-center text-text-muted hover:text-primary hover:border-primary transition-colors"
+                                href="#">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a class="size-10 rounded-full bg-surface-dark border border-border-dark flex items-center justify-center text-text-muted hover:text-primary hover:border-primary transition-colors"
+                                href="#">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.072 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-span-1">
+                        <h4 class="text-white font-bold mb-6 font-display">Shop</h4>
+                        <ul class="flex flex-col gap-3">
+                            <li><a class="text-text-muted hover:text-primary text-sm transition-colors" href="#">Tires
+                                    by Vehicle</a></li>
+                            <li><a class="text-text-muted hover:text-primary text-sm transition-colors" href="#">Tires
+                                    by Size</a></li>
+                            <li><a class="text-text-muted hover:text-primary text-sm transition-colors" href="#">Tires
+                                    by Brand</a></li>
+                            <li><a class="text-text-muted hover:text-primary text-sm transition-colors"
+                                    href="#">Wheels</a></li>
+                            <li><a class="text-text-muted hover:text-primary text-sm transition-colors"
+                                    href="#">Promotions</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-span-1">
+                        <h4 class="text-white font-bold mb-6 font-display">Support</h4>
+                        <ul class="flex flex-col gap-3">
+                            <li><a class="text-text-muted hover:text-primary text-sm transition-colors" href="#">Contact
+                                    Us</a></li>
+                            <li><a class="text-text-muted hover:text-primary text-sm transition-colors" href="#">Order
+                                    Status</a></li>
+                            <li><a class="text-text-muted hover:text-primary text-sm transition-colors"
+                                    href="#">Warranty Info</a></li>
+                            <li><a class="text-text-muted hover:text-primary text-sm transition-colors"
+                                    href="#">Returns</a></li>
+                            <li><a class="text-text-muted hover:text-primary text-sm transition-colors"
+                                    href="#">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-span-1">
+                        <h4 class="text-white font-bold mb-6 font-display">Visit Us</h4>
+                        <div class="rounded-lg overflow-hidden h-32 mb-4 relative">
+                            <img class="w-full h-full object-cover opacity-60 hover:opacity-100 transition-opacity cursor-pointer"
+                                data-alt="Map showing location of the tire shop in a city context"
+                                data-location="New York City"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjMsuK1FXCxePBHPrRLh_a5DpuXgUrH-dy-RD8H5AtRgRzzXucIE81EkGEXlTsg2gBepefjLsKGvD1m7rChjnLXucPzt1ZJnbkAmQ48YW9qRJiF6DpxCDUt9FkaFV8YlLSuiSxhxXVVLz-c1HQ0dVpC33bynsgSxuVlESwTQXafRLe3ByXwoBc3rVKVRxSGC0SQatSkc4Fwtc9GOnNKg1bL8p8OxLj-01eBjQ29Od2Sxd675YXL66ADZstpH3SpkzZQyX5IQsOuA9U" />
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <span
+                                    class="material-symbols-outlined text-primary text-3xl drop-shadow-lg">location_on</span>
+                            </div>
+                        </div>
+                        <p class="text-text-muted text-sm">
+                            1234 Rubber Ave,<br />
+                            Motor City, MC 48201
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="border-t border-border-dark pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-text-muted text-xs">© 2024 Tire Co. All rights reserved.</p>
+                    <div class="flex gap-6">
+                        <a class="text-text-muted hover:text-white text-xs" href="#">Privacy Policy</a>
+                        <a class="text-text-muted hover:text-white text-xs" href="#">Terms of Service</a>
+                        <a class="text-text-muted hover:text-white text-xs" href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const applySizeBtn = document.querySelector('button'); // The "Apply Size" button
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const products = document.querySelectorAll('.product-item'); // Change this to your actual card class
+
+    // Function to run the filter
+    const filterProducts = () => {
+        // Get Values from Selects
+        const width = document.querySelectorAll('select')[0].value;
+        const ratio = document.querySelectorAll('select')[1].value;
+        const diameter = document.querySelectorAll('select')[2].value;
+
+        // Get Values from Checkboxes
+        const activeTypes = Array.from(checkboxes)
+            .filter(i => i.checked && i.closest('details').querySelector('summary').innerText.includes('Type'))
+            .map(i => i.parentElement.innerText.split('(')[0].trim());
+
+        const activeBrands = Array.from(checkboxes)
+            .filter(i => i.checked && i.closest('details').querySelector('summary').innerText.includes('Brand'))
+            .map(i => i.parentElement.innerText.trim());
+
+        products.forEach(product => {
+            const pWidth = product.dataset.width;
+            const pRatio = product.dataset.ratio;
+            const pDiameter = product.dataset.diameter;
+            const pType = product.dataset.type;
+            const pBrand = product.dataset.brand;
+
+            // Matching Logic
+            const matchesSize = (pWidth === width && pRatio === ratio && pDiameter === diameter);
+            const matchesType = activeTypes.length === 0 || activeTypes.includes(pType);
+            const matchesBrand = activeBrands.length === 0 || activeBrands.includes(pBrand);
+
+            if (matchesSize && matchesType && matchesBrand) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    };
+
+    // Event Listeners
+    applySizeBtn.addEventListener('click', filterProducts);
+    checkboxes.forEach(cb => cb.addEventListener('change', filterProducts));
+});
+</script>
+</html>
